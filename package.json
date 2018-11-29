@@ -1,0 +1,27 @@
+{
+  "name": "react-study",
+  "version": "1.0.0",
+  "description": "react 相关学习汇总",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/study20171001/react-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/study20171001/react-study/issues"
+  },
+  "homepage": "https://github.com/study20171001/react-study#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}
