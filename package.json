@@ -4,7 +4,7 @@
   "description": "react 相关学习汇总",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node ./server/bin.js",
     "build": "next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,6 +27,7 @@
     "@zeit/next-typescript": "^1.1.1",
     "babel-loader": "^8.0.4",
     "next": "^7.0.2",
+    "next-routes": "^1.4.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "typescript": "^3.2.1"
