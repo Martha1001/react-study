@@ -4,7 +4,7 @@
   "description": "react 相关学习汇总",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./server/bin.js",
+    "dev": "nodemon ./server/bin.js",
     "build": "next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -33,6 +33,7 @@
     "typescript": "^3.2.1"
   },
   "devDependencies": {
+    "nodemon": "^1.18.7",
     "tslint": "^5.11.0"
   }
 }
