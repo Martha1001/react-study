@@ -6,7 +6,7 @@ const testRouter = new Router({ prefix: '/test' })
 testRouter.get('/a', (ctx) => {
   ctx.status = 200
   ctx.body = {
-    a: 'this is from koa-router /test/a',
+    a: 'koa-router /test/a',
   }
 })
 
