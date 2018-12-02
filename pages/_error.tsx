@@ -1,12 +1,12 @@
 import React from 'react'
 
-interface Props{
+interface Props {
   statusCode: any
 }
 
 export default class Error extends React.Component<Props> {
   static getInitialProps({ res, err }) {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+    const statusCode = res ? res.statusCode : err ? err.statusCode : null
     return { statusCode }
   }
 

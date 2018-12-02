@@ -4,7 +4,7 @@
   "description": "react 相关学习汇总",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./server/bin.js",
+    "dev": "nodemon ./server/bin.ts",
     "build": "next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,11 +21,14 @@
   "homepage": "https://github.com/study20171001/react-study#readme",
   "dependencies": {
     "@babel/core": "^7.1.6",
+    "@types/koa-router": "^7.0.35",
     "@types/next": "^7.0.5",
     "@types/react": "^16.7.10",
     "@types/react-dom": "^16.0.11",
     "@zeit/next-typescript": "^1.1.1",
     "babel-loader": "^8.0.4",
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
     "next": "^7.0.2",
     "next-routes": "^1.4.2",
     "react": "^16.6.3",

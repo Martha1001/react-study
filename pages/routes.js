@@ -1,6 +1,9 @@
-const routes = require('next-routes')
+import * as nextRoutes from 'next-routes'
 
-module.exports = routes()
+const routes = nextRoutes()
   .add('index', '/', 'index')
   .add('demo', '/demo', 'demo')
   .add('nextRoutes', '/demo/nextRoutes', 'demo/testPage/nextRoutes')
+  
+export default routes
+  
