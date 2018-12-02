@@ -4,7 +4,7 @@ import * as path from 'path'
 
 import routes from '../pages/routes'
 import pageRoute from './middleware/pageRoute'
-import routerGen from './utils/routerGen'
+import rootRouter from './utils/rootRouter'
 
 const port = parseInt(process.env.PORT, 10) || 3030
 const app = next({ dev: process.env.NODE_ENV !== 'production' })
@@ -14,7 +14,7 @@ const apiRoutePath = path.resolve(__dirname, './api')
 // With koa
 app.prepare().then(() => {
   const server = new Koa()
-  const apiRoute = routerGen(apiRoutePath)
+  const apiRoute = rootRouter(apiRoutePath)
 
   server.use(apiRoute.routes())
     .use(apiRoute.allowedMethods())

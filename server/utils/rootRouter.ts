@@ -1,8 +1,8 @@
 import * as fs from 'fs'
 import * as Router from 'koa-router'
 
-const routerGen = (routerPath) => {
-  const rootRouter = new Router()
+const rootRouter = (routerPath) => {
+  const routerGen = new Router()
   const router = new Router({ prefix: '/api' })
   let subRouter
 
@@ -13,8 +13,8 @@ const routerGen = (routerPath) => {
       router.use(subRouter.default.routes(), subRouter.default.allowedMethods())
     })
 
-  rootRouter.use(subRouter.default.routes(), subRouter.default.allowedMethods())
-  return rootRouter
+  routerGen.use(subRouter.default.routes(), subRouter.default.allowedMethods())
+  return routerGen
 }
 
-export default routerGen
+export default rootRouter
