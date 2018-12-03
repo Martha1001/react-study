@@ -3,14 +3,15 @@ import routes from './routes'
 const { Link } = routes
 
 const Container = styled.div`
-  padding: 10px;
+  padding: .1rem;
+  font-size: .24rem;
 
   h1{
     color: green;
-    font-size: 30px;
+    font-size: .4rem;
   }
   li{
-    font-size: 20px;
+    font-size: .3rem;
   }
 `
 

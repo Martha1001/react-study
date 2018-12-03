@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import { REM750 } from './common/utils/rem'
 
 interface Props {
   styleTags: any
@@ -18,6 +19,7 @@ export default class MyDocument extends Document<Props> {
       <html lang="zh">
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover" />
+          <script dangerouslySetInnerHTML={{ __html: REM750 }} />
           {this.props.styleTags}
         </Head>
         <body>
