@@ -11,7 +11,11 @@ const DemoStyled = styled.div`
     font-size: .4rem;
   }
   li{
+    list-style: disc inside;
     font-size: .3rem;
+  }
+  a{
+    text-decoration: underline;
   }
 `
 
