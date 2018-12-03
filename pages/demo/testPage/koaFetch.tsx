@@ -44,7 +44,7 @@ class KoaFetch extends Component<{}, State> {
   async getErr() {
     try {
       const res = await get('/api/test/ab')
-      console.log(res.ab)
+      console.log('/ab res ==>', res)
     } catch (e) {
       console.log(e)
     }

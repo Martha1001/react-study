@@ -45,7 +45,7 @@ export function request(options: Options) {
     if (res.status === 200) {
       return res.json()
     } else {
-      // console.log(`${options.method} ${requestUrl} ${res.status} (${res.statusText})!`)
+      console.log(`[fetch error]: ${options.method} ${requestUrl} ${res.status} (${res.statusText})!`)
       return res
     }
   }, err => err)
