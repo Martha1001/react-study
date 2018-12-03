@@ -7,7 +7,7 @@ const rootRouter = (routerPath) => {
   let subRouter
 
   fs.readdirSync(routerPath)
-    .filter((filename) => filename.endsWith('.ts'))
+    .filter((filename) => filename.endsWith(process.env.NODE_ENV !== 'production' ? '.ts' : '.js'))
     .forEach((filename) => {
       subRouter = require(`${routerPath}/${filename}`)
       router.use(subRouter.default.routes(), subRouter.default.allowedMethods())

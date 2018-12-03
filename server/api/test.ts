@@ -6,7 +6,13 @@ const testRouter = new Router({ prefix: '/test' })
 testRouter.get('/a', (ctx) => {
   ctx.status = 200
   ctx.body = {
-    a: 'koa-router /test/a',
+    a: '/test/a',
+  }
+})
+testRouter.get('/env', (ctx) => {
+  ctx.status = 200
+  ctx.body = {
+    env: process.env.NODE_ENV,
   }
 })
 
