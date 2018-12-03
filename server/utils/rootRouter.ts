@@ -13,7 +13,7 @@ const rootRouter = (routerPath) => {
       router.use(subRouter.default.routes(), subRouter.default.allowedMethods())
     })
 
-  routerGen.use(subRouter.default.routes(), subRouter.default.allowedMethods())
+  routerGen.use(router.routes(), router.allowedMethods())
   return routerGen
 }
 
