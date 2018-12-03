@@ -21,6 +21,7 @@ export default class MyDocument extends Document<Props> {
           <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover" />
           <link rel="stylesheet" type="text/css" href="/static/css/reset.css" />
           <script dangerouslySetInnerHTML={{ __html: REM750 }} />
+          <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
           {this.props.styleTags}
         </Head>
         <body>
