@@ -25,6 +25,7 @@ const Home = () => {
       <h1>Welcome to next.js!</h1>
       <ul>
         <li>jump <Link route="/demo"><a>/demo</a></Link> page</li>
+        <li>jump <Link route="/lotteryDraw"><a>/lotteryDraw</a></Link> page</li>
       </ul>
     </Container>
   )
