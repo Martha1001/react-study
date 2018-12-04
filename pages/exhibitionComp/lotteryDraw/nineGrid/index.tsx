@@ -1,10 +1,14 @@
 import { Component } from 'react'
-import { NineGridStyled } from './index.style'
-
-import { get } from '../../common/utils/fetch'
+import { get } from '../../../common/utils/fetch'
 
 import { UProgress, LuckyDrawBox } from './components'
-import { IMG_PREFIX, PRIZES } from './constants'
+import { NINEGRID_IMG_PREFIX, NINEGRID_PRIZES } from '../../constants'
+
+import styled from 'styled-components'
+import { CommonStyled } from '../../index.style'
+const NineGridStyled = styled(CommonStyled)`
+
+`
 
 interface State {
   isReceive: boolean,
@@ -49,11 +53,11 @@ class NineGrid extends Component<State> {
       const luckDrawRes = await get('/api/lotteryDraw/nineGrid')
       if (luckDrawRes.isSuccess) {
         this.setState({ drawBtnDisabled: true })
-        for (let i = 0; i < PRIZES.length; i++) {
-          if (PRIZES[i].awardCode === luckDrawRes.value.prizeAlias) {
+        for (let i = 0; i < NINEGRID_PRIZES.length; i++) {
+          if (NINEGRID_PRIZES[i].awardCode === luckDrawRes.value.prizeAlias) {
             this.setState({
               prizeId: i,
-              prize: PRIZES[i].name,
+              prize: NINEGRID_PRIZES[i].name,
             }, () => {
               const luckyDrawBoxDom: any = this.refs.luckyDrawBox
               luckyDrawBoxDom.handlePlay()
@@ -82,8 +86,8 @@ class NineGrid extends Component<State> {
           <UProgress isReceive={isReceive} joinDay={joinDay} prize={prize} />
           <LuckyDrawBox
             ref="luckyDrawBox"
-            prizes={PRIZES}
-            imgPrefix={IMG_PREFIX}
+            prizes={NINEGRID_PRIZES}
+            imgPrefix={NINEGRID_IMG_PREFIX}
             prizeId={prizeId}
             isReceive={isReceive}
             drawBtnDisabled={drawBtnDisabled || isReceive || joinDay < 3}

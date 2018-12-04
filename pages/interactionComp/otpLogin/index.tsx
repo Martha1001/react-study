@@ -1,8 +1,17 @@
 import { Component } from 'react'
-import { OtpLoginStyled } from './index.style'
 import { OtpLoginBox } from './conponents'
 
 import { post } from '../../common/utils/fetch'
+
+import styled from 'styled-components'
+import { CommonStyled } from '../index.style'
+const OtpLoginStyled = styled(CommonStyled)`
+  .login-box{
+    width: 90%;
+    padding: .4rem 5%;
+    background: #3C9DF4;
+  }
+`
 
 class OtpLogin extends Component {
   componentWillMount() {

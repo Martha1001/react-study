@@ -1,23 +1,7 @@
-import styled from 'styled-components'
 import routes from '../routes'
 const { Link } = routes
 
-const InteractionCompStyled = styled.div`
-  padding: .1rem;
-  font-size: .24rem;
-
-  h1{
-    color: blue;
-    font-size: .4rem;
-  }
-  li{
-    list-style: disc inside;
-    font-size: .3rem;
-  }
-  a{
-    text-decoration: underline;
-  }
-`
+import { InteractionCompStyled } from './index.style'
 
 const InteractionComp = () => {
   return (

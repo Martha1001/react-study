@@ -16,7 +16,7 @@ export const CommonStyled = styled.div`
   }
 `
 
-export const InteractionCompStyled = styled.div`
+export const ExhibitionCompStyled = styled.div`
   padding: .1rem;
   font-size: .24rem;
 
@@ -30,5 +30,9 @@ export const InteractionCompStyled = styled.div`
   }
   a{
     text-decoration: underline;
+  }
+  img{
+    width: 80%;
+    margin: 0 auto;
   }
 `
