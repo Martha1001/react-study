@@ -26,6 +26,7 @@ const Home = () => {
       <ul>
         <li>jump <Link route="/demo"><a>/demo</a></Link> page</li>
         <li>jump <Link route="/lotteryDraw"><a>/lotteryDraw</a></Link> page</li>
+        <li>jump <Link route="/scroll"><a>/scroll</a></Link> page</li>
       </ul>
     </Container>
   )

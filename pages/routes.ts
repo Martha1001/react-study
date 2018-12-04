@@ -1,11 +1,13 @@
 import routeInstance from './common/gatewayRoutes'
 import demo from './demo/route'
 import lotteryDraw from './lotteryDraw/route'
+import scroll from './scroll/route'
 
 const routeConfig = [
   ['home', '/', 'index'],
   ...demo,
   ...lotteryDraw,
+  ...scroll,
 ]
 routeConfig.map(item => routeInstance.add.apply(routeInstance, item))
 
