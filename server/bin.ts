@@ -2,6 +2,8 @@ import * as Koa from 'koa'
 import * as next from 'next'
 import * as path from 'path'
 
+import * as bodyParser from 'koa-bodyparser'
+
 import routes from '../pages/routes'
 import pageRoute from './middleware/pageRoute'
 import rootRouter from './utils/rootRouter'
@@ -16,7 +18,9 @@ app.prepare().then(() => {
   const server = new Koa()
   const apiRoute = rootRouter(apiRoutePath)
 
-  server.use(apiRoute.routes())
+  server
+    .use(bodyParser())
+    .use(apiRoute.routes())
     .use(apiRoute.allowedMethods())
     .use(async (ctx, nxt) => {
       if (ctx.url.indexOf('/api/') === -1) {
