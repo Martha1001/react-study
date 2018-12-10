@@ -1,4 +1,5 @@
 import * as Router from 'koa-router'
+import { getNum } from '../../crawler/demo/test'
 
 const router = new Router()
 const testRouter = new Router({ prefix: '/test' })
@@ -54,6 +55,14 @@ testRouter.post('/postFormTest', (ctx) => {
   }
   ctx.body = {
     postFormTest,
+  }
+})
+
+testRouter.get('/node', async (ctx) => {
+  ctx.status = 200
+  const res = await getNum()
+  ctx.body = {
+    node: res,
   }
 })
 

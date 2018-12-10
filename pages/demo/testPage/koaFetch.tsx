@@ -22,7 +22,8 @@ interface State {
   testTxt: string
   postTestTxt: string
   postTestTxtErr: string
-  postFormTest: string
+  postFormTest: string,
+  getNodeData: any,
 }
 
 class KoaFetch extends Component<{}, State> {
@@ -31,6 +32,7 @@ class KoaFetch extends Component<{}, State> {
     postTestTxt: undefined,
     postTestTxtErr: undefined,
     postFormTest: undefined,
+    getNodeData: undefined,
   }
 
   componentWillMount() {
@@ -41,6 +43,8 @@ class KoaFetch extends Component<{}, State> {
     this.postTestTxt()
     this.postTestTxtErr()
     this.postFormTest()
+
+    this.getNodeData()
   }
 
   async getTestTxt() {
@@ -106,8 +110,17 @@ class KoaFetch extends Component<{}, State> {
     }
   }
 
+  async getNodeData() {
+    try {
+      const res = await get('/api/test/node')
+      this.setState({getNodeData: res.node})
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
   render() {
-    const { testTxt, postTestTxt, postTestTxtErr, postFormTest } = this.state
+    const { testTxt, postTestTxt, postTestTxtErr, postFormTest, getNodeData } = this.state
     return (
       <KoaFetchStyled>
         <h1>this is koa-fetch page!</h1>
@@ -115,6 +128,7 @@ class KoaFetch extends Component<{}, State> {
         <h2>koa-postTestTxt: {postTestTxt}</h2>
         <h2>koa-postTestTxtErr: {postTestTxtErr}</h2>
         <h2>koa-postFormTest: {postFormTest}</h2>
+        <h2>koa-getNodeData: {getNodeData}</h2>
         <div>
           goBack <Link route="/demo"><a>/demo</a></Link> page
         </div>
